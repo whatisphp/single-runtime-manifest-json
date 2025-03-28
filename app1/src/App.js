@@ -1,6 +1,6 @@
 import React from 'react';
 import LocalButton from './Button';
-import RemoteButton from 'app2/Button';
+import Test from './Test';
 
 const App = () => {
   const [count, setCount] = React.useState(0);
@@ -51,9 +51,7 @@ const App = () => {
         </div>
         <div>
           <h3>Remote Button (from App 2):</h3>
-          <React.Suspense fallback="Loading Remote Button...">
-            <RemoteButton />
-          </React.Suspense>
+          <Test />
         </div>
       </div>
 

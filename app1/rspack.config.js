@@ -83,9 +83,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app1',
       runtime: false,
-      filename: 'remoteEntry.js',
       remotes: {
-        app2: 'app2@http://localhost:3002/remoteEntry.js',
+        app2: 'app2@http://localhost:3002/mf-manifest.json',
       },
       runtimePlugins: [require.resolve('./single-runtime.js')],
       exposes: {

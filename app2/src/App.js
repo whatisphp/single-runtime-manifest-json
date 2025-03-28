@@ -1,10 +1,11 @@
 import React from 'react';
 import LocalButton from './Button';
-import RemoteButton from 'app1/Button';
 
 const App = () => {
   const [count, setCount] = React.useState(0);
-  
+
+  console.log(`test`);
+
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
       <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -47,12 +48,6 @@ const App = () => {
         <div>
           <h3>Local Button:</h3>
           <LocalButton />
-        </div>
-        <div>
-          <h3>Remote Button (from App 1):</h3>
-          <React.Suspense fallback="Loading Remote Button...">
-            <RemoteButton />
-          </React.Suspense>
         </div>
       </div>
 

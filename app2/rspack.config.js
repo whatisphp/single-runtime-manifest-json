@@ -13,6 +13,11 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     port: 3002,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    },
   },
   target: 'web',
   output: {
@@ -64,10 +69,6 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'app2',
-      filename: 'remoteEntry.js',
-      remotes: {
-        app1: 'app1@http://localhost:3001/remoteEntry.js',
-      },
       runtimePlugins: [require.resolve('./single-runtime.js')],
       exposes: {
         './Button': './src/Button',
